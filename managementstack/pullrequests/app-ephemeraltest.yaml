@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: myapps
+spec:
+  generators:
+  - pullRequest:
+      github:
+          # The GitHub organization or user.
+          owner: a1tan
+          # The Github repository
+          repo: app-ephemeraltest
+          # For GitHub Enterprise (optional)
+          # api: https://git.example.com/
+          # Reference to a Secret containing an access token. (optional)
+          # tokenRef:
+          #   secretName: github-token
+          #   key: token
+          # Labels is used to filter the PRs that you want to target. (optional)
+          # labels:
+          # - preview
+  template:
+    metadata:
+      name: 'myapp-{{branch}}-{{number}}'
+    spec:
+      source:
+        repoURL: 'https://github.com/a1tan/app-ephemeraltest.git'
+        targetRevision: '{{head_sha}}'
+        path: charts/vcluster
+        helm:
+          parameters:
+          - name: "image.tag"
+            value: "pull-{{head_sha}}"
+      project: default
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
