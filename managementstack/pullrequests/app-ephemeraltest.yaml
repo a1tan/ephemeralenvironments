@@ -24,6 +24,7 @@ spec:
   template:
     metadata:
       name: 'myapp-{{branch}}-{{number}}'
+      namespace: 'myapp-{{branch}}-{{number}}-namespace'
     spec:
       source:
         repoURL: 'https://github.com/a1tan/app-ephemeraltest.git'
