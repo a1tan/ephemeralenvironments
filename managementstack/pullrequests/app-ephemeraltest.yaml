@@ -20,7 +20,7 @@ spec:
           # Labels is used to filter the PRs that you want to target. (optional)
           # labels:
           # - preview
-      requeueAfterSeconds: 20
+      requeueAfterSeconds: 120
   template:
     metadata:
       name: 'myapp-{{branch}}-{{number}}'
