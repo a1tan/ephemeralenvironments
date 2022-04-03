@@ -30,10 +30,10 @@ spec:
         repoURL: 'https://github.com/a1tan/ephemeralcluster.git'
         targetRevision: 'main'
         path: charts/vcluster
-        # helm:
-        #   parameters:
-        #   - name: "image.tag"
-        #     value: "pull-{{head_sha}}"
+        helm:
+          parameters:
+          - name: "syncer.extraArgs[0]"
+            value: "--out-kube-config-server=https://cluster-{{branch}}-{{number}}-headless.cluster-{{branch}}-{{number}}-namespace"
       project: default
       destination:
         server: https://kubernetes.default.svc
