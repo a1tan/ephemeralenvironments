@@ -36,7 +36,7 @@ spec:
             value: "pull-{{head_sha}}"
       project: default
       destination:
-        server: https://kubernetes.default.svc
+        server: https://cluster-{{branch}}-{{number}}.cluster-{{branch}}-{{number}}-namespace.svc.cluster.local
         namespace: 'sampleapp-{{branch}}-{{number}}-namespace'
       syncPolicy:
           automated:
