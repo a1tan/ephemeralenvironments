@@ -36,7 +36,7 @@ spec:
             value: "pull-{{head_sha}}"
       project: default
       destination:
-        server: https://cluster-{{branch}}-{{number}}.cluster-{{branch}}-{{number}}-namespace.svc.cluster.local/k8s/clusters/1
+        server: https://cluster-{{branch}}-{{number}}.cluster-{{branch}}-{{number}}-namespace.svc.cluster.local
         namespace: 'sampleapp-{{branch}}-{{number}}-namespace'
       syncPolicy:
           automated:
