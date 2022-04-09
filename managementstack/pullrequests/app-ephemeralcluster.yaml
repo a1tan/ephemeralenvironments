@@ -34,6 +34,8 @@ spec:
           parameters:
           - name: "syncer.extraArgs[0]"
             value: "--out-kube-config-server=https://cluster-{{branch}}-{{number}}.cluster-{{branch}}-{{number}}-namespace.svc.cluster.local"
+          - name: "syncer.extraArgs[1]"
+            value: "--tls-san=https://cluster-{{branch}}-{{number}}.cluster-{{branch}}-{{number}}-namespace.svc.cluster.local"
       project: default
       destination:
         server: https://kubernetes.default.svc
