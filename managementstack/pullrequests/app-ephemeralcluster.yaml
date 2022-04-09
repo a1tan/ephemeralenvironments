@@ -33,7 +33,7 @@ spec:
         helm:
           parameters:
           - name: "syncer.extraArgs[0]"
-            value: "--out-kube-config-server=https://cluster-{{branch}}-{{number}}.cluster-{{branch}}-{{number}}-namespace.svc.cluster.local"
+            value: "--out-kube-config-server=https://cluster-{{branch}}-{{number}}.cluster-{{branch}}-{{number}}-namespace.svc.cluster.local/k8s/clusters/1"
           - name: "syncer.extraArgs[1]"
             value: "--tls-san=cluster-{{branch}}-{{number}}.cluster-{{branch}}-{{number}}-namespace.svc.cluster.local"
       project: default
