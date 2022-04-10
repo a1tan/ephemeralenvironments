@@ -16497,6 +16497,8 @@ spec:
         - --redis
         - argocd-redis:6379
         env:
+        - name: "ARGOCD_EXEC_TIMEOUT"
+          value: "5m"
         - name: ARGOCD_RECONCILIATION_TIMEOUT
           valueFrom:
             configMapKeyRef:
@@ -16920,7 +16922,7 @@ metadata:
   name: argocd-application-controller
   namespace: argocd
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-application-controller
@@ -17033,6 +17035,8 @@ spec:
               key: redis.db
               name: argocd-cmd-params-cm
               optional: true
+        - name: ARGOCD_SERVER_REPO_SERVER_TIMEOUT_SECONDS
+          value: "500"
         - name: ARGOCD_DEFAULT_CACHE_EXPIRATION
           valueFrom:
             configMapKeyRef:
