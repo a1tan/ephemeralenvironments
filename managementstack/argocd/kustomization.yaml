@@ -4,4 +4,4 @@ kind: Kustomization
 
 resources:
   - namespace.yaml
-  - install-with-argo-cd.yaml
+  - install.yaml
