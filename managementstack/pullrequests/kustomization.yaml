@@ -3,6 +3,6 @@ kind: Kustomization
 
 
 resources:
-  # - app-ephemeraltest.yaml
+  - app-ephemeraltest.yaml
   - app-ephemeralcluster.yaml
-  - app-ephemeralsmalltest.yaml
+  # - app-ephemeralsmalltest.yaml
