@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: sampleappssmall
+  name: sampleappsmall
   namespace: argocd
 spec:
   generators:
@@ -23,7 +23,7 @@ spec:
       requeueAfterSeconds: 120
   template:
     metadata:
-      name: 'sampleapp-{{branch}}-{{number}}'
+      name: 'sampleappsmall-{{branch}}-{{number}}'
       # namespace: 'myapp-{{branch}}-{{number}}-namespace'
     spec:
       source:
