@@ -37,7 +37,7 @@ spec:
       project: default
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'sampleapp-{{branch}}-{{number}}-namespace'
+        namespace: 'sampleapp-ns-{{branch}}-{{number}}-namespace'
       syncPolicy:
           automated:
               allowEmpty: true
