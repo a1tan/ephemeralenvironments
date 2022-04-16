@@ -34,6 +34,8 @@ spec:
           parameters:
           - name: "image.tag"
             value: "pull-{{head_sha}}"
+          - name: "environment"
+            value: "PR-Namespace-Dev"
       project: default
       destination:
         server: https://kubernetes.default.svc
